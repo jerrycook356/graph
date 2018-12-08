@@ -1,6 +1,6 @@
 #include "Graph.h"
 
-/
+
 template<class LabelType>
 Graph<LabelType>::Graph(int numberOfVertices)
 {
