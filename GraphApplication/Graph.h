@@ -10,7 +10,7 @@ class Graph :public GraphInterface<LabelType>
 
 private:
 
-	int* adjMatrix;
+	int** adjMatrix;
 	int vertices;
 
 public:

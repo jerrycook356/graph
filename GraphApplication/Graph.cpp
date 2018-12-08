@@ -4,9 +4,12 @@
 template<class LabelType>
 Graph<LabelType>::Graph(int numberOfVertices)
 {
-	adjMatrix = new int[numberOfVertices, numberOfVertices];
+	adjMatrix = new int*[numberOfVertices];
 	vertices = numberOfVertices;
-	
+	for (int i = 0;i < numberOfVertices;i++)
+	{
+		adjMatrix[i] = new int[numberOfVertices]();
+	}
 }
 
 template<class LabelType>
@@ -25,6 +28,7 @@ int Graph<LabelType>::getNumEdges() const
 template<class LabelType>
 bool Graph<LabelType>::add(LabelType start, LabelType end, int edgeWeight)
 {
+	
 	int weight = edgeWeight;
 	adjMatrix[start, end] = 1;
 	
