@@ -26,7 +26,7 @@ public:
 	void depthFirstTraversal(LabelType start, void visit(LabelType&));
 
 
-
+	//
 };
 #include "Graph.cpp"
 
