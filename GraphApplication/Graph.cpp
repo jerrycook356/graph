@@ -9,6 +9,10 @@ Graph<LabelType>::Graph(int numberOfVertices)
 	for (int i = 0;i < numberOfVertices;i++)
 	{
 		adjMatrix[i] = new int[numberOfVertices]();
+		for (int j = 0;j < numberOfVertices;j++)
+		{
+			adjMatrix[i][j] = 0;
+		}
 	}
 }
 
@@ -30,7 +34,9 @@ bool Graph<LabelType>::add(LabelType start, LabelType end, int edgeWeight)
 {
 	
 	int weight = edgeWeight;
-	adjMatrix[start, end] = 1;
+	
+
+	adjMatrix[start][end] = 1;
 	
 
 	return true;
