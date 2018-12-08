@@ -24,6 +24,7 @@ public:
 	int getEdgeWeight(LabelType start, LabelType end)const;
 	void breadthFirstTraversal(LabelType start, void visit(LabelType&));
 	void depthFirstTraversal(LabelType start, void visit(LabelType&));
+	void plowStreets(Graph<LabelType>* graph);
 
 
 	//

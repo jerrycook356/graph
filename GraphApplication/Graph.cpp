@@ -1,5 +1,7 @@
 #include "Graph.h"
+#include <stack>
 
+using namespace std;
 
 template<class LabelType>
 Graph<LabelType>::Graph(int numberOfVertices)
@@ -65,4 +67,25 @@ template<class LabelType>
 void Graph<LabelType>::depthFirstTraversal(LabelType start, void visit(LabelType&))
 {
 
+}
+
+template<class LabelType>
+void Graph<LabelType>::plowStreets(Graph<LabelType>* graph)
+{
+	stack<int> stack;
+	int counter = 1;
+	int endCounter = 2;
+
+		if (graph->adjMatrix[counter][endCounter] == 1)
+		{
+			stack.push(1);
+
+			cout << endl << " plowing street  = (" << counter << " " << endCounter << ")";
+			if (graph->adjMatrix[counter][endCounter] == 1)
+			{
+				cout << endl << " plowing street  = (" << endCounter << " " << counter << ")";
+			}
+		}
+		else
+			counter++;
 }
