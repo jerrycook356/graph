@@ -1,7 +1,10 @@
 #include "Graph.h"
-#include <stack>
+#include <queue>
+
 
 using namespace std;
+
+
 
 template<class LabelType>
 Graph<LabelType>::Graph(int numberOfVertices)
@@ -70,22 +73,23 @@ void Graph<LabelType>::depthFirstTraversal(LabelType start, void visit(LabelType
 }
 
 template<class LabelType>
-void Graph<LabelType>::plowStreets(Graph<LabelType>* graph)
+void Graph<LabelType>::plowStreets()
 {
-	stack<int> stack;
-	int counter = 1;
-	int endCounter = 2;
+	int start = 1;
+	int end = 1;
 
-		if (graph->adjMatrix[counter][endCounter] == 1)
+	int limit = vertices;
+
+	for (int i = 1;i < vertices;i++)
+	{
+		for (int j = 1;j < vertices; j++)
 		{
-			stack.push(1);
-
-			cout << endl << " plowing street  = (" << counter << " " << endCounter << ")";
-			if (graph->adjMatrix[counter][endCounter] == 1)
+			if (adjMatrix[i][j] == 1)
 			{
-				cout << endl << " plowing street  = (" << endCounter << " " << counter << ")";
-			}
+				cout << endl << "Plowing from " << i <<" to "<<j;				
+			}			
+
 		}
-		else
-			counter++;
+	}
+
 }
